@@ -13,6 +13,17 @@ class DSROI_ADMIN extends DSROI_BASE{
       }
     } );
 
+		/* REDIRECT USERS ON LOGIN BASED ON USER ROLE */
+		add_filter( 'login_redirect', function( $url, $request, $user ){
+	    if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ){
+        if( $user->has_cap( 'administrator' ) || $user->has_cap( 'editor' ) ){
+          $url = admin_url();
+        }
+				else{ $url = home_url( '/dashboard' ); }
+	    }
+	    return $url;
+		}, 10, 3 );
+
 	}
 
 }
