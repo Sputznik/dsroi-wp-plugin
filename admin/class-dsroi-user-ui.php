@@ -22,10 +22,10 @@ class DSROR_USER_UI extends DSROI_BASE{
 		}
 
     if( isset( $_POST['submit'] ) ){
-      if( $_POST['dsroi-ufy'] ){
-        update_user_meta( $user_id, 'dsroi_ufy', $_POST['dsroi-ufy'] );
+      if( $_POST['dsroi-iy'] ){
+        update_user_meta( $user_id, 'dsroi_iy', $_POST['dsroi-iy'] );
       } else{
-        update_user_meta( $user_id, 'dsroi_ufy', '' );
+        update_user_meta( $user_id, 'dsroi_iy', '' );
       }
     }
 
