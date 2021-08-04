@@ -1,8 +1,8 @@
 <?php
 
 	$terms = get_terms( array(
-		'taxonomy' 		=> 'year',
-		'hide_empty' 	=> false,
+		'taxonomy' 		=> 'institute-year',
+		'hide_empty' 	=> false
 	) );
 
 	$selected_years = get_user_meta( $user->ID, 'dsroi_iy', true );

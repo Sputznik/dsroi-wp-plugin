@@ -9,7 +9,7 @@ add_filter( 'orbit_post_type_vars', function( $orbit_types ){
 			'singular_name' => 'Announcement'
 		),
 		'menu_icon'	=> 'dashicons-megaphone',
-		'public'		=> false,
+		'public'		=> true,
 		'supports'	=> array( 'title', 'editor','thumbnail' )
 	);
 
@@ -32,9 +32,9 @@ add_filter( 'orbit_post_type_vars', function( $orbit_types ){
 /* PUSH INTO THE GLOBAL VARS OF ORBIT TAXNOMIES */
 add_filter( 'orbit_taxonomy_vars', function( $orbit_tax ){
 
-  $orbit_tax['year']	= array(
+  $orbit_tax['institute-year']	= array(
     'label'			  => 'Year',
-    'slug' 			  => 'year',
+    'slug' 			  => 'institute-year',
     'post_types'	=> array( 'announcements', 'modules' ),
   );
 

@@ -17,7 +17,7 @@ define( 'DSROI_URI', plugin_dir_url( __DIR__ ).'dsroi-wp-plugin/' ); // ROOT URL
 $inc_files = array(
   'class-dsroi-base.php',
   'admin/admin.php',
-  'shortcodes/shortcodes.php',
+  'shortcodes/shortcodes.php'
 );
 
 foreach( $inc_files as $inc_file ){

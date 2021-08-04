@@ -38,7 +38,7 @@ class DSROI_QUERY extends DSROI_SHORTCODE{
   			'order' 					=> $atts['order'],
         'tax_query'       => array(
           array(
-            'taxonomy' => 'year',
+            'taxonomy' => 'institute-year',
             'field'    => 'slug',
             'terms'    => $this->getSelectedYears()
           )
