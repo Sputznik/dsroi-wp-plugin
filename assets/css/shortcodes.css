@@ -1,0 +1,112 @@
+/* MODULES TEMPLATE */
+.dsroi-modules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dsroi-modules .post-module {
+  margin-bottom: 15px;
+}
+
+.dsroi-modules .module-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  border: 1px solid #6934c5;
+  padding: 15px 40px 15px 10px;
+}
+
+.dsroi-modules .title h4 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 34px;
+  color: #000000;
+}
+
+.dsroi-modules .open-module {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dsroi-modules .open-module {
+  font-size: 18px;
+  padding: 16px 28px;
+  background: #6934c5;
+  color: #ffffff;
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #6934c5;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.dsroi-modules .open-module:hover {
+  background-color: #5f2fb1;
+  border-color: #5f2fb1;
+}
+
+.dsroi-modules .open-module i {
+  margin-right: 15px;
+}
+
+/* ANNOUNCEMENTS TEMPLATE */
+.dsroi-announcements {
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.dsroi-announcements .post-announcement {
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+.dsroi-announcements .date {
+  margin-right: 10px;
+}
+
+.dsroi-announcements .title {
+  text-decoration: underline;
+  outline: none;
+  color: #55299e;
+}
+
+.dsroi-announcements .title:hover {
+  color: #3f1f7a;
+}
+
+@media (max-width: 780px) {
+  /* MODULES TEMPLATE */
+  .dsroi-modules .module-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-right: 10px;
+  }
+  .dsroi-modules .title {
+    margin-bottom: 45px;
+  }
+}
