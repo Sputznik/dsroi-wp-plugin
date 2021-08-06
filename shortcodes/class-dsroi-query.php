@@ -28,7 +28,7 @@ class DSROI_QUERY extends DSROI_SHORTCODE{
 
     ob_start();
 
-    if( is_user_logged_in() && !empty( $this->getSelectedYears() ) ){
+    if( is_user_logged_in() && !empty( DSROI_WP_UTIL::getSelectedYears() ) ){
 
       /* CREATE QUERY ATTRIBUTES WITH DEFAULT VALUES FROM THE SHORTCODE ATTRIBUTES */
       $query_atts = array(
@@ -36,13 +36,7 @@ class DSROI_QUERY extends DSROI_SHORTCODE{
   			'post_status'			=> $atts['post_status'],
   			'posts_per_page'	=> $atts['posts_per_page'],
   			'order' 					=> $atts['order'],
-        'tax_query'       => array(
-          array(
-            'taxonomy' => 'institute-year',
-            'field'    => 'slug',
-            'terms'    => $this->getSelectedYears()
-          )
-        )
+        'tax_query'       => DSROI_WP_UTIL::getTaxQuery()
       );
 
       $dsroi_query = new WP_Query( $query_atts );
@@ -66,11 +60,6 @@ class DSROI_QUERY extends DSROI_SHORTCODE{
 
     return ob_get_clean();
 
-  }
-
-  function getSelectedYears(){
-    $user_id = get_current_user_id();
-    return get_user_meta( $user_id, 'dsroi_iy', true );
   }
 
 }
