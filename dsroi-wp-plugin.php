@@ -18,7 +18,7 @@ $inc_files = array(
   'class-dsroi-base.php',
   'lib/lib.php',
   'admin/admin.php',
-  'shortcodes/shortcodes.php',
+  'shortcodes/shortcodes.php'
 );
 
 foreach( $inc_files as $inc_file ){

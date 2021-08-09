@@ -2,6 +2,16 @@
 
 class DSROI_WP_UTIL extends DSROI_BASE{
 
+  // LIST OF ALLOWED ROLES
+  public static function isAllowedRole(){
+    $user = wp_get_current_user();
+    $allowed_roles = array('editor', 'administrator', 'bbp_moderator');
+    if( array_intersect( $allowed_roles, $user->roles ) ){
+      return true;
+    }
+    return false;
+  }
+
   // TAX QUERY CALLBACK BASED ON THE SELECTED INSTITUTE YEAR
   public static function getTaxQuery(){
     return array(
