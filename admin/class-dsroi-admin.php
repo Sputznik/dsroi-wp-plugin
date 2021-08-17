@@ -6,7 +6,7 @@ class DSROI_ADMIN extends DSROI_BASE{
 
     //BLOCK DASHBOARD ACCESS FOR NON ADMINS
     add_action( 'init', function(){
-      if ( is_admin() && ! ( DSROI_WP_UTIL::isAllowedRole() ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+      if ( is_admin() && ! ( current_user_can( 'administrator' ) || current_user_can('editor') ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
         wp_redirect( home_url() );
         exit;
       }
