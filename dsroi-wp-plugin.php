@@ -15,6 +15,9 @@ define( 'DSROI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DSROI_URI', plugin_dir_url( __DIR__ ).'dsroi-wp-plugin/' ); // ROOT URL
 define( 'DSROI_SINGLE_TEMPLATE', DSROI_PATH."partials/singles/" );
 
+register_activation_hook( __FILE__, array( 'DSROI_PLUGIN_INIT', 'pluginActivation' ) );
+register_deactivation_hook( __FILE__, array( 'DSROI_PLUGIN_INIT', 'pluginDeactivation' ) );
+
 $inc_files = array(
   'class-dsroi-base.php',
   'lib/lib.php',

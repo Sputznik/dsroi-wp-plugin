@@ -1,6 +1,7 @@
 <?php
 
 $inc_files = array(
+  "class-dsroi-plugin-init.php",
   "class-dsroi-wp-util.php",
   "class-dsroi-wp.php"
 );
