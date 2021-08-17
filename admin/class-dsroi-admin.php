@@ -23,8 +23,26 @@ class DSROI_ADMIN extends DSROI_BASE{
 	    return $url;
 		}, 10, 3 );
 
+		// WP SIDEBAR WIDGETS
+		add_action( 'widgets_init', array( $this, "dsroiWidgets" ) );
+
+	}
+
+	function dsroiWidgets(){
+
+		register_sidebar( array(
+			'name' 			    => 'Single Module Sidebar',
+			'description'   => 'Appears in the single module page before the footer area',
+			'id' 			      => 'dsroi-single-module-sidebar',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' 	=> '</aside>',
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+		) );
+
 	}
 
 }
+
 
 DSROI_ADMIN::getInstance();
