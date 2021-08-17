@@ -12,7 +12,11 @@ get_header(); ?>
           <?php the_title();?>
         </h1>
   			<ul class="entry-meta">
-  				<?php siteorigin_north_post_meta(); ?>
+  				<?php //siteorigin_north_post_meta(); ?>
+          <li class="posted-on">
+      			<span class="meta-icon north-icon-calendar" aria-hidden="true"></span>
+            <?php echo get_the_date('M j, Y'); ?>
+      		</li>
   			</ul>
   		</header>
     	<div class="entry-content">
