@@ -28,7 +28,7 @@ class DSROI_QUERY extends DSROI_SHORTCODE{
 
     ob_start();
 
-    if( is_user_logged_in() && !empty( DSROI_WP_UTIL::getSelectedYears() ) ){
+    if( is_user_logged_in() && ( !empty( DSROI_WP_UTIL::getSelectedYears() ) || DSROI_WP_UTIL::isAllowedRole() ) ){
 
       /* CREATE QUERY ATTRIBUTES WITH DEFAULT VALUES FROM THE SHORTCODE ATTRIBUTES */
       $query_atts = array(
