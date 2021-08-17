@@ -15,13 +15,24 @@ class DSROI_ADMIN extends DSROI_BASE{
 		/* REDIRECT USERS ON LOGIN BASED ON USER ROLE */
 		add_filter( 'login_redirect', function( $url, $request, $user ){
 	    if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ){
-        if( $user->has_cap( 'administrator' ) || $user->has_cap( 'editor' ) ){
-          $url = admin_url();
-        }
+				if( $user->has_cap( 'administrator' ) || $user->has_cap( 'editor' ) ){
+					$url = admin_url();
+				}
 				else{ $url = home_url( '/dashboard' ); }
-	    }
+			}
 	    return $url;
 		}, 10, 3 );
+
+		// SET COOKIE FOR REDIRECTING BACK TO THE PREVIOUS PAGE
+		add_action( 'wp', array( $this, 'setPreviousPageUrl' ) );
+
+		// REDIRECT TO LOGIN PAGE
+		add_action( 'template_redirect', function(){
+			if( DSROI_WP_UTIL::isRedirectRequired() ){
+				wp_redirect( home_url('/login/') );
+				exit();
+			}
+		});
 
 		// WP SIDEBAR WIDGETS
 		add_action( 'widgets_init', array( $this, "dsroiWidgets" ) );
@@ -45,7 +56,15 @@ class DSROI_ADMIN extends DSROI_BASE{
 
 	}
 
-}
+	function setPreviousPageUrl(){
+		$cookie_name = 'dsroi_redirect_url_cookie';
+		if( DSROI_WP_UTIL::isRedirectRequired() ){
+			if(	!isset(	$_COOKIE[$cookie_name] ) ){
+				setcookie( $cookie_name, get_the_permalink() , time() + ( MINUTE_IN_SECONDS * 30 ) );
+			}
+		}
+	}
 
+}
 
 DSROI_ADMIN::getInstance();

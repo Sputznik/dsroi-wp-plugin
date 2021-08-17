@@ -28,4 +28,12 @@ class DSROI_WP_UTIL extends DSROI_BASE{
     return get_user_meta( $user_id, 'dsroi_iy', true );
   }
 
+  public static function isRedirectRequired(){
+    $dsroi_pages = array('modules', 'announcements');
+    if ( ! is_user_logged_in() && ( is_singular( $dsroi_pages ) || is_post_type_archive( $dsroi_pages ) || is_page('dashboard') ) ){
+      return true;
+    }
+    return false;
+  }
+
 }
