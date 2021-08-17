@@ -36,7 +36,7 @@ class DSROI_QUERY extends DSROI_SHORTCODE{
   			'post_status'			=> $atts['post_status'],
   			'posts_per_page'	=> $atts['posts_per_page'],
   			'order' 					=> $atts['order'],
-        'tax_query'       => DSROI_WP_UTIL::getTaxQuery()
+        'tax_query'       => ! DSROI_WP_UTIL::isAllowedRole() ? DSROI_WP_UTIL::getTaxQuery() : ''
       );
 
       $dsroi_query = new WP_Query( $query_atts );
