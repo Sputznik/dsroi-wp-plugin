@@ -26,6 +26,9 @@ class DSROI_ADMIN extends DSROI_BASE{
 		// WP SIDEBAR WIDGETS
 		add_action( 'widgets_init', array( $this, "dsroiWidgets" ) );
 
+		/* HIDE ADMIN BAR FROM THE FRONTEND */
+		add_filter('show_admin_bar', '__return_false');
+
 	}
 
 	function dsroiWidgets(){
