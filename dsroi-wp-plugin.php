@@ -13,6 +13,7 @@ if( ! defined( 'ABSPATH' ) ){ exit; }
 define( 'DSROI_VERSION', time() );
 define( 'DSROI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DSROI_URI', plugin_dir_url( __DIR__ ).'dsroi-wp-plugin/' ); // ROOT URL
+define( 'DSROI_SINGLE_TEMPLATE', DSROI_PATH."partials/singles/" );
 
 $inc_files = array(
   'class-dsroi-base.php',

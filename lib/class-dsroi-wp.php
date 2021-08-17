@@ -9,10 +9,14 @@ class DSROI_WP_PLUGIN extends DSROI_BASE{
 
    add_action( 'pre_get_posts', array( $this, 'modifyArchiveQuery' ) );
 
+   add_filter( 'single_template', array($this, 'getSinglePostTemplate') );
+
   }
 
   function assets(){
 		wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', false, null );
+
+    wp_enqueue_style('dsroi-css', DSROI_URI.'assets/css/dsroi.css', array('font-awesome'), time() );
 	}
 
   function modifyArchiveQuery( $query ) {
@@ -25,6 +29,24 @@ class DSROI_WP_PLUGIN extends DSROI_BASE{
       }
   	}
 
+  }
+
+  function getSinglePostTemplate( $single_template ) {
+
+    global $post;
+
+    $dsroi_singles = array(
+      'modules'       => DSROI_SINGLE_TEMPLATE."single-modules.php",
+      'announcements' => DSROI_SINGLE_TEMPLATE."single-announcements.php"
+    );
+
+    foreach( $dsroi_singles as $slug => $file ){
+      if( $slug === $post->post_type && file_exists( $file ) ){
+        $single_template = $file;
+      }
+    }
+
+    return $single_template;
   }
 
 }

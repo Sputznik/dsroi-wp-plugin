@@ -1,0 +1,23 @@
+body.single .dsroi-post{
+  font-size:18px;
+}
+.dsroi-post .dashboard-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #292929 !important;
+  text-decoration: none;
+  outline: none;
+  margin-bottom: 15px;
+}
+.dsroi-post .dashboard-btn i{
+  margin-right: 15px;
+}
+
+.dsroi-post .entry-title{
+  font-weight: 700;
+}
+
+.dsroi-post .entry-title .title-prefix{
+  color: #6934c5;
+}
