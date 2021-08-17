@@ -14,6 +14,7 @@ class DSROI_BUTTON extends DSROI_SHORTCODE{
     return array(
       'url'      => '#',
 			'text' 		 => 'Click',
+      'type'     => 'default',
       'style'    => 'default'
     );
   }
