@@ -12,10 +12,9 @@ get_header(); ?>
           <?php the_title();?>
         </h1>
   			<ul class="entry-meta">
-  				<?php //siteorigin_north_post_meta(); ?>
-          <li class="posted-on">
-      			<span class="meta-icon north-icon-calendar" aria-hidden="true"></span>
-            <?php echo get_the_date('M j, Y'); ?>
+  				<li class="posted-on">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+      			<?php echo get_the_date('M j, Y'); ?>
       		</li>
   			</ul>
   		</header>
@@ -23,7 +22,7 @@ get_header(); ?>
     		<?php the_content(); ?>
     	</div>
     </article>
-    <?php siteorigin_north_the_post_navigation(); ?>
+    <?php include( DSROI_PATH.'partials/post-navigation.php' );?>
   <?php endwhile; // End of the loop. ?>
 </div>
 <?php get_footer(); ?>

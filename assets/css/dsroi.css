@@ -1,13 +1,33 @@
+/* SINGLE POST TEMPLATES */
 body.single .dsroi-post{
   font-size:18px;
 }
-.dsroi-post .dashboard-btn{
+
+.dsroi-post .dashboard-btn,
+.dsroi-post .entry-meta .posted-on,
+.dsroi-post .post-navigation .nav-previous a,
+.dsroi-post .post-navigation .nav-next a{
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.dsroi-post .entry-meta .posted-on
+.dsroi-post .post-navigation .nav-previous a,
+.dsroi-post .post-navigation .nav-next a{
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dsroi-post .dashboard-btn{
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
   justify-content: space-between;
   color: #292929 !important;
   text-decoration: none;
-  outline: none;
   margin-bottom: 15px;
 }
 .dsroi-post .dashboard-btn i{
@@ -16,8 +36,101 @@ body.single .dsroi-post{
 
 .dsroi-post .entry-title{
   font-weight: 700;
+  margin: 0 0 1em;
+  color: #000000;
+  font-size: 1.6em;
 }
 
 .dsroi-post .entry-title .title-prefix{
   color: #6934c5;
+}
+.dsroi-post p {
+  margin-bottom: 1.5em;
+}
+.dsroi-post a{
+  color: #55299e;
+}
+
+.dsroi-post a:hover,
+.dsroi-post a:focus{
+  color: #3f1f7a;
+  outline: 0;
+}
+
+.dsroi-post .entry-content{
+  color: #1e1e1e;
+  margin: 15px 0;
+  line-height: 1.8;
+}
+
+.dsroi-post ul{
+  list-style: disc;
+}
+
+.dsroi-post ol, .dsroi-post ul {
+  margin: 0 0 1.5em 1.5em;
+  padding: 0;
+}
+
+.dsroi-post article.page, .dsroi-post article.post {
+  margin-bottom: 80px;
+}
+
+.dsroi-post .sow-accordion-panel-header:focus{
+  outline: none !important;
+}
+
+.dsroi-post .entry-meta{
+  margin: -15px 0 25px;
+  font-size: .85em;
+}
+
+.dsroi-post .entry-meta .posted-on i{
+  margin-right: 6px;
+}
+
+/* SINGLE POST NAVIGATION */
+.dsroi-post .post-navigation .nav-previous,
+.dsroi-post .post-navigation .nav-next{
+  width: 50%;
+}
+.dsroi-post .post-navigation .nav-previous{
+  float: left;
+}
+.dsroi-post .post-navigation .nav-next{
+  float: right;
+  text-align: right;
+}
+
+.dsroi-post .post-navigation .nav-previous i,
+.dsroi-post .post-navigation .nav-next i{
+  display: inline-block;
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 8px;
+}
+
+.dsroi-post .post-navigation .nav-previous i{
+  float: left;
+}
+
+.dsroi-post .post-navigation .nav-next i{
+  float: right;
+}
+
+@media(max-width:479px){
+  .dsroi-post .post-navigation .nav-previous,
+  .dsroi-post .post-navigation .nav-next{
+    float: none;
+    width: 100%;
+  }
+  .dsroi-post .post-navigation .nav-previous a,
+  .dsroi-post .post-navigation .nav-next a{
+    display: block;
+  }
+  .dsroi-post .post-navigation .nav-previous{
+    margin-bottom: 15px;
+  }
+
 }
