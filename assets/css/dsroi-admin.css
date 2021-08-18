@@ -1,0 +1,44 @@
+.mce-dsroi-shortcode-btn{
+  background: #f6f7f7 !important;
+  padding: 0px 4px !important;
+  margin: 3px 5px !important;
+  box-shadow: none !important;
+  border-color: #2271b1 !important;
+}
+
+.mce-dsroi-shortcode-btn:hover{
+  background-color: #f0f0f1 !important;
+  border-color: #0a4b78 !important;
+}
+
+.mce-dsroi-shortcode-btn .mce-txt,
+.mce-dsroi-shortcode-btn .mce-i-link{
+  color: #2271b1 !important;
+}
+
+.mce-dsroi-shortcode-btn .mce-txt,
+.mce-dsroi-shortcode-btn .mce-i-link{
+  line-height: 20px !important;
+}
+
+.mce-dsroi-shortcode-btn:hover .mce-txt,
+.mce-dsroi-shortcode-btn:hover .mce-i-link{
+  color: #0a4b78 !important;
+}
+
+#dsroi-shortcode-dialog #dsroi-shortcode-dialog-dragh{
+  pointer-events: none !important;
+}
+
+#dsroi-shortcode-dialog .mce-window-head .mce-close:focus .mce-i-remove{
+  box-shadow: none !important;
+}
+
+#dsroi-shortcode-dialog .mce-window-body .mce-btn,
+#dsroi-shortcode-dialog .mce-foot .mce-btn{
+  box-shadow: none !important;
+}
+
+#dsroi-shortcode-dialog .mce-btn:active{
+  transform: none !important;
+}

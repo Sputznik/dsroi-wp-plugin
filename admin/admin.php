@@ -3,7 +3,8 @@
 $inc_files = array(
   'orbit-bundle-dependency.php',
   'class-dsroi-admin.php',
-  'class-dsroi-user-ui.php'
+  'class-dsroi-user-ui.php',
+  'class-dsroi-tinymce.php'
 );
 
 

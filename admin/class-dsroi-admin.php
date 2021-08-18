@@ -40,6 +40,13 @@ class DSROI_ADMIN extends DSROI_BASE{
 		/* HIDE ADMIN BAR FROM THE FRONTEND */
 		add_filter('show_admin_bar', '__return_false');
 
+		// LOAD ADMIN ASSETS
+		add_action('admin_enqueue_scripts', array( $this, 'adminAssets' ) );
+
+	}
+
+	function adminAssets() {
+  	wp_enqueue_style('dsroi-admin-css', DSROI_URI."assets/css/dsroi-admin.css");
 	}
 
 	function dsroiWidgets(){
