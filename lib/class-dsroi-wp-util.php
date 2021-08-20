@@ -36,4 +36,14 @@ class DSROI_WP_UTIL extends DSROI_BASE{
     return false;
   }
 
+  public static function getModuleNumber(){
+    $module_number = get_post_meta( get_the_ID(), 'module_number', true );
+    return $module_number;
+  }
+
+  public static function getWeekText(){
+    $weekText = self::getModuleNumber() > 0 ? "Week ".self::getModuleNumber().": " : "";
+    return $weekText;
+  }
+
 }

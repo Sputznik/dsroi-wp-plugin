@@ -49,8 +49,6 @@
   padding: 16px 28px;
   background: #6934c5;
   color: #ffffff;
-  text-decoration: none !important;
-  outline: none !important;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 1px solid #6934c5;
@@ -80,18 +78,26 @@
   color: #000000;
 }
 
-.dsroi-announcements .date {
+.dsroi-announcements .announcement-date {
   margin-right: 10px;
+  color: #1e1e1e;
 }
 
-.dsroi-announcements .title {
-  text-decoration: underline;
-  outline: none;
+.dsroi-announcements .title .announcement-title {
   color: #55299e;
+  text-decoration: underline;
 }
 
 .dsroi-announcements .title:hover {
   color: #3f1f7a;
+}
+
+.dsroi-modules .title > a,
+.dsroi-modules .open-module,
+.dsroi-announcements .title,
+.dsroi-announcements .announcement-date{
+  text-decoration: none;
+  outline: none;
 }
 
 /* DSROI BUTTON SHORTCODE */
