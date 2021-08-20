@@ -41,3 +41,22 @@ add_filter( 'orbit_taxonomy_vars', function( $orbit_tax ){
   return $orbit_tax;
 
 } );
+
+/* PUSH INTO THE GLOBAL VARS OF ORBIT META FIELDS */
+add_filter( 'orbit_meta_box_vars', function( $meta_box ){
+
+	$meta_box['modules'] = array(
+		array(
+			'id'			=> 'modules-meta-field',
+			'title'		=> 'Additional Information',
+			'fields'	=> array(
+				'module_number'	=> array(
+					'type' => 'text',
+					'text' => 'Module Number'
+				)
+			)
+		)
+	);
+
+	return $meta_box;
+});
