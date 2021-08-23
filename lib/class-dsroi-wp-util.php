@@ -46,4 +46,14 @@ class DSROI_WP_UTIL extends DSROI_BASE{
     return $weekText;
   }
 
+  public static function setCookie( $cookie_name ){
+    global $wp;
+    setcookie( $cookie_name, home_url( $wp->request ), time() + ( MINUTE_IN_SECONDS * 30 ), "/" );
+  }
+
+  public static function deleteCookie( $cookie_name ){
+    unset( $_COOKIE[$cookie_name] );
+    setcookie( $cookie_name, null, -1, "/" );
+  }
+
 }

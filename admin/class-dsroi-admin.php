@@ -2,7 +2,11 @@
 
 class DSROI_ADMIN extends DSROI_BASE{
 
+	var $cookie_name;
+
 	function __construct(){
+
+		$this->cookie_name = 'dsroi_redirect_url_cookie';
 
     //BLOCK DASHBOARD ACCESS FOR NON ADMINS
     add_action( 'init', function(){
@@ -15,10 +19,17 @@ class DSROI_ADMIN extends DSROI_BASE{
 		/* REDIRECT USERS ON LOGIN BASED ON USER ROLE */
 		add_filter( 'login_redirect', function( $url, $request, $user ){
 	    if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ){
-				if( $user->has_cap( 'administrator' ) || $user->has_cap( 'editor' ) ){
-					$url = admin_url();
+				if(!isset(	$_COOKIE[$this->cookie_name] ) ){
+					if( $user->has_cap( 'administrator' ) || $user->has_cap( 'editor' ) ){
+						$url = admin_url();
+					}
+					else{ $url = home_url( '/dashboard' ); }
 				}
-				else{ $url = home_url( '/dashboard' ); }
+				else{
+					$url = $_COOKIE[$this->cookie_name];
+					// DELETE COOKIE ON LOGIN
+					DSROI_WP_UTIL::deleteCookie( $this->cookie_name );
+				}
 			}
 	    return $url;
 		}, 10, 3 );
@@ -64,12 +75,16 @@ class DSROI_ADMIN extends DSROI_BASE{
 	}
 
 	function setPreviousPageUrl(){
-		$cookie_name = 'dsroi_redirect_url_cookie';
 		if( DSROI_WP_UTIL::isRedirectRequired() ){
-			if(	!isset(	$_COOKIE[$cookie_name] ) ){
-				setcookie( $cookie_name, get_the_permalink() , time() + ( MINUTE_IN_SECONDS * 30 ) );
+			if(	!isset(	$_COOKIE[$this->cookie_name] ) ){
+				DSROI_WP_UTIL::setCookie( $this->cookie_name );
+			}
+			else{
+				DSROI_WP_UTIL::deleteCookie( $cookie_name );
+				DSROI_WP_UTIL::setCookie( $this->cookie_name );
 			}
 		}
+
 	}
 
 }
