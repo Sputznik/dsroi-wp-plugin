@@ -79,8 +79,9 @@ class DSROI_ADMIN extends DSROI_BASE{
 
 		// CUSTOM LOGIN HEADER TEXT
 		add_filter( 'login_headertext', function( $headertext ){
-			return get_bloginfo( 'name' );
-		} );
+			$headertext = get_bloginfo( 'name' );
+			return $headertext;
+		});
 
 	}
 
