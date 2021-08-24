@@ -104,12 +104,13 @@ class DSROI_ADMIN extends DSROI_BASE{
 	}
 
 	function setPreviousPageUrl(){
+
 		if( DSROI_WP_UTIL::isRedirectRequired() ){
 			if(	!isset(	$_COOKIE[$this->cookie_name] ) ){
 				DSROI_WP_UTIL::setCookie( $this->cookie_name );
 			}
 			else{
-				DSROI_WP_UTIL::deleteCookie( $cookie_name );
+				DSROI_WP_UTIL::deleteCookie( $this->cookie_name );
 				DSROI_WP_UTIL::setCookie( $this->cookie_name );
 			}
 		}
