@@ -57,6 +57,31 @@ class DSROI_ADMIN extends DSROI_BASE{
 		// CPT MODULES TITLE PREFIX
 		add_filter( 'the_title', array( $this, 'moduleTitlePrefix' ), 10, 2 );
 
+		/* REMOVE WP LOGO FROM LOGIN */
+		add_action( 'login_enqueue_scripts', function(){
+			?>
+			<style type="text/css">
+				#login h1 a, .login h1 a {
+					height: auto;
+			    background: none !important;
+			    width: auto;
+			    text-indent: unset;
+					font-size: 25px;
+				}
+			</style>
+			<?php
+		});
+
+		// CUSTOM LOGIN HEADER URL
+		add_filter( 'login_headerurl', function(){
+			return get_bloginfo( 'url' );
+		});
+
+		// CUSTOM LOGIN HEADER TEXT
+		add_filter( 'login_headertext', function( $headertext ){
+			return get_bloginfo( 'name' );
+		} );
+
 	}
 
 	function adminAssets() {
