@@ -4,7 +4,7 @@
     <div class="module-inner">
       <div class="title">
         <a href="<?php the_permalink(); ?>" role="link">
-					<h4><?php echo DSROI_WP_UTIL::getWeekText(); the_title(); ?></h4>
+					<h4><?php the_title(); ?></h4>
 				</a>
       </div>
       <a class="open-module" href="<?php the_permalink(); ?>" role="link" aria-label="open week<?php echo DSROI_WP_UTIL::getModuleNumber();?> module">

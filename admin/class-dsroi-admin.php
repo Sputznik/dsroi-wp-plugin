@@ -54,6 +54,9 @@ class DSROI_ADMIN extends DSROI_BASE{
 		// LOAD ADMIN ASSETS
 		add_action('admin_enqueue_scripts', array( $this, 'adminAssets' ) );
 
+		// CPT MODULES TITLE PREFIX
+		add_filter( 'the_title', array( $this, 'moduleTitlePrefix' ), 10, 2 );
+
 	}
 
 	function adminAssets() {
@@ -85,6 +88,20 @@ class DSROI_ADMIN extends DSROI_BASE{
 			}
 		}
 
+	}
+
+	function moduleTitlePrefix( $title, $post_id ) {
+
+		$post_type = get_post_type( $post_id );
+
+    if( !is_admin() && ( $post_type === 'modules' ) ) {
+			$module_prefix = get_post_meta( $post_id, 'module_title_prefix', true );
+			if( $module_prefix && !empty( $module_prefix ) ){
+				$title = $module_prefix.': '.$title;
+			}
+		}
+
+		return $title;
 	}
 
 }
