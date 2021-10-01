@@ -8,7 +8,7 @@ get_header(); ?>
     <article <?php post_class( 'entry' ); ?>>
   		<header class="entry-header">
         <h1 class="entry-title">
-          <span class="title-prefix">Announcements:</span>
+          <span class="title-prefix">Announcement:</span>
           <?php the_title();?>
         </h1>
   			<ul class="entry-meta">
