@@ -12,10 +12,11 @@ class DSROI_BUTTON extends DSROI_SHORTCODE{
 
   function getDefaultAtts(){
     return array(
-      'url'      => '#',
-			'text' 		 => 'Click',
-      'type'     => 'default',
-      'style'    => 'default'
+      'url'         => '#',
+			'text' 		    => 'Click',
+      'type'        => 'default',
+      'style'       => 'default',
+      'aria-label'  => 'Button'
     );
   }
 

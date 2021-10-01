@@ -26,6 +26,12 @@
                   minWidth: 350,
                },
                {
+                  type: 'textbox',
+                  name: 'ariaLabel',
+                  label: 'Aria Label',
+                  minWidth: 350,
+               },
+               {
                   type: 'listbox',
                   name: 'btnType',
                   label: 'Type',
@@ -45,11 +51,11 @@
                }
             ],
             onsubmit: function( e ){
-              if(e.data.btnText === '' || e.data.btnURL === '') {
+              if(e.data.btnText === '' || e.data.btnURL === ''|| e.data.ariaLabel === '') {
                 ed.windowManager.alert("Please, fill in all fields.");
                 return false;
               }
-              ed.insertContent( '[dsroi_button text="'+e.data.btnText+'" url="'+e.data.btnURL+'" type="'+e.data.btnType+'" style="'+e.data.btnStyle+'"]');
+              ed.insertContent( '[dsroi_button text="'+e.data.btnText+'" url="'+e.data.btnURL+'" type="'+e.data.btnType+'" style="'+e.data.btnStyle+'" aria-label="'+e.data.ariaLabel+'"]');
             }
           });
         });
