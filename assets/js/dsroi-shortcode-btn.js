@@ -3,7 +3,7 @@
   tinymce.create("tinymce.plugins.Dsroi", {
       init : function(ed, url) {
         ed.addButton("dsroi_shortcode_btn", {
-            text: "Insert Link",
+            text: "Add button",
             cmd : "dsroi_shortcode_btn_callback",
             icon: 'link',
             classes: "dsroi-shortcode-btn"
