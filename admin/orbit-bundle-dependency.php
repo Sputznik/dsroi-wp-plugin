@@ -24,6 +24,18 @@ add_filter( 'orbit_post_type_vars', function( $orbit_types ){
 		'supports'	=> array( 'title', 'editor','thumbnail' )
 	);
 
+	$orbit_types['radical-actions'] = array(
+		'slug' 		=> 'radical-actions',
+		'labels'	=> array(
+			'name' 					=> 'Radical Actions',
+			'singular_name' => 'Radical Action Item',
+		),
+		'menu_icon'	=> 'dashicons-text-page',
+		'taxonomies'	=> array('post_tag'),
+		'public'		=> true,
+		'supports'	=> array( 'title', 'editor', 'excerpt', 'thumbnail' )
+	);
+
 	return $orbit_types;
 
 } );
@@ -35,7 +47,14 @@ add_filter( 'orbit_taxonomy_vars', function( $orbit_tax ){
   $orbit_tax['institute-year']	= array(
     'label'			  => 'Year',
     'slug' 			  => 'institute-year',
-    'post_types'	=> array( 'announcements', 'modules' ),
+    'post_types'	=> array( 'announcements', 'modules', 'radical-actions' ),
+  );
+
+	$orbit_tax['radical-action-type']	= array(
+    'label'			  => 'Radical Action Type',
+    'slug' 			  => 'radical-action-type',
+		'hierarchical'	=> false,
+    'post_types'	=> array( 'radical-actions' ),
   );
 
   return $orbit_tax;
@@ -53,6 +72,23 @@ add_filter( 'orbit_meta_box_vars', function( $meta_box ){
 				'module_title_prefix'	=> array(
 					'type' => 'text',
 					'text' => 'Module Title Prefix'
+				)
+			)
+		)
+	);
+
+	$meta_box['radical-actions'] = array(
+		array(
+			'id'			=> 'radical-actions-meta-field',
+			'title'		=> 'Additional Information',
+			'fields'	=> array(
+				'video_link'	=> array(
+					'type' => 'text',
+					'text' => 'Video link'
+				),
+				'external_link'	=> array(
+					'type' => 'text',
+					'text' => 'External link'
 				)
 			)
 		)
