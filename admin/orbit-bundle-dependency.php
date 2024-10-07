@@ -95,6 +95,10 @@ add_filter( 'orbit_meta_box_vars', function( $meta_box ){
 				'external_link'	=> array(
 					'type' => 'text',
 					'text' => 'External link'
+				),
+				'transcript_url'	=> array(
+					'type' => 'text',
+					'text' => 'Transcript URL'
 				)
 			)
 		)
