@@ -57,6 +57,12 @@ add_filter( 'orbit_taxonomy_vars', function( $orbit_tax ){
     'post_types'	=> array( 'radical-actions' ),
   );
 
+	$orbit_tax['region']	= array(
+    'label'			  => 'Regions',
+    'slug' 			  => 'region',
+    'post_types'	=> array( 'radical-actions' ),
+  );
+
   return $orbit_tax;
 
 } );
