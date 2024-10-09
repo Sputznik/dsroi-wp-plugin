@@ -36,8 +36,9 @@ class DSROI_WP_PLUGIN extends DSROI_BASE{
     global $post;
 
     $dsroi_singles = array(
-      'modules'       => DSROI_SINGLE_TEMPLATE."single-modules.php",
-      'announcements' => DSROI_SINGLE_TEMPLATE."single-announcements.php"
+      'modules'         => DSROI_SINGLE_TEMPLATE."single-modules.php",
+      'announcements'   => DSROI_SINGLE_TEMPLATE."single-announcements.php",
+      'radical-actions' => DSROI_SINGLE_TEMPLATE."single-radical-actions.php"
     );
 
     foreach( $dsroi_singles as $slug => $file ){

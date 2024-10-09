@@ -56,4 +56,10 @@ class DSROI_WP_UTIL extends DSROI_BASE{
     setcookie( $cookie_name, null, -1, "/" );
   }
 
+  public static function get_the_post_terms( $post_id, $taxonomy ){
+    $terms = get_the_terms( $post_id, $taxonomy );
+    if( empty( $terms ) || is_wp_error( $terms ) ) return array();
+    return $terms;
+  }
+
 }

@@ -119,6 +119,122 @@ body.single .dsroi-post{
   float: right;
 }
 
+/* CPT RADICAL ACTIONS */
+.dsroi-radical-actions article.post {
+  margin-bottom: 45px;
+}
+
+.dsroi-radical-actions .entry-title {
+  color: #55299e;
+}
+
+.dsroi-radical-actions .post-container,
+.dsroi-radical-actions .post-thumbnail {
+  margin-top: 45px;
+}
+
+.dsroi-radical-actions .entry-content {
+  margin: 0;
+}
+
+.dsroi-radical-actions .transcript-url {
+  display: block;
+  color: inherit;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.dsroi-radical-actions .featured-img {
+  min-height: 200px;
+  background-color: #eeeeee;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dsroi-radical-actions .external-link {
+  margin-top: 45px;
+  text-align: center;
+}
+
+.dsroi-radical-actions .post-meta {
+  color: #1e1e1e;
+  background-color: #efefef;
+  border: 1px solid #dbdbdb;
+  padding: 15px 30px 15px 30px;
+}
+
+.dsroi-radical-actions .post-tags {
+  color: #d03749;
+}
+
+.radical-action-post-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.radical-action-post-nav .previous-post,
+.radical-action-post-nav .next-post {
+  display: flex;
+  gap: 20px;
+}
+
+.radical-action-post-nav .next-post {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.radical-action-post-nav .fa {
+  color: #8e8e8e;
+  font-size: 25px;
+}
+
+.radical-action-post-nav .post-label,
+.radical-action-post-nav .post-title {
+  color: #1e1e1e;
+  font-size: 18px;
+  margin: 0 0 5px;
+  font-weight: 700;
+  line-height: 1.4em;
+}
+
+.radical-action-post-nav .next-post-inner {
+  text-align: right;
+}
+
+.radical-action-post-nav .post-title {
+  margin: 5px 0 0;
+  color: #55229e;
+  text-decoration: none;
+}
+
+@media(min-width: 768px){
+  .dsroi-radical-actions .post-container {
+    display: flex;
+  }
+
+  .dsroi-radical-actions .entry-content {
+    width: 45%;
+  }
+
+  .dsroi-radical-actions .post-thumbnail {
+    margin: 0;
+    width: 55%;
+    padding-left: 30px;
+  }
+
+  .radical-action-post-nav {
+    gap: 0;
+  }
+
+  .radical-action-post-nav .previous-post,
+  .radical-action-post-nav .next-post {
+    width: 50%;
+  }
+}
+
 @media(max-width:479px){
   .dsroi-post .post-navigation .nav-previous,
   .dsroi-post .post-navigation .nav-next{
