@@ -8,7 +8,7 @@ get_header(); ?>
     <article <?php post_class( 'entry' ); ?>>
   		<header class="entry-header">
         <h1 class="entry-title"><?php the_title();?></h1>
-        <?php include( DSROI_PATH.'partials/radical-actions/post-meta.php' ); ?>
+        <?php echo do_shortcode('[dsroi_radical_actions_meta]');?>
   		</header>
       <div class="post-container">
         <div class="entry-content">

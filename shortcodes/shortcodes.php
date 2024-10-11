@@ -3,7 +3,8 @@
 $inc_files = array(
   "class-dsroi-shortcode.php",
   "class-dsroi-query.php",
-  "class-dsroi-button.php"
+  "class-dsroi-button.php",
+  "dsroi-shortcodes.php"
 );
 
 foreach( $inc_files as $inc_file ){

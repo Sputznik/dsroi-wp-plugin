@@ -210,6 +210,79 @@ body.single .dsroi-post{
   text-decoration: none;
 }
 
+/* ORBIT RADICAL FILTER */
+.orbit-search-form [data-list~="form-btns"],
+.orbit-search-results .radical-actions-list {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.orbit-search-form [data-list~="form-btns"] {
+  margin-left: -5px;
+}
+
+.orbit-search-form [data-list~="form-btns"] > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.orbit-search-form button[type="submit"],
+.orbit-search-results .load-more {
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: 1px solid #55229e;
+  background-color: #55229e;
+  text-transform: capitalize;
+}
+
+.orbit-search-results .orbit-results-header {
+  border: none !important;
+}
+
+.orbit-search-results .orbit-results-heading {
+  margin: 0;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.orbit-search-results .radical-actions-list .orbit-article-db {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-gap: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+
+}
+
+.orbit-search-results .radical-actions-list .orbit-article-db,
+.orbit-search-results .radical-actions-list .orbit-article-db a {
+  color: #000000;
+}
+
+.orbit-search-results .radical-actions-list .post-thumbnail,
+.orbit-search-results .radical-actions-list .orbit-thumbnail-bg {
+  min-height: 150px;
+  align-self: self-start;
+  background-color: #eeeeee;
+}
+
+.orbit-search-results .radical-actions-list h3 {
+  font-size: 27px;
+  line-height: 1.4em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.orbit-search-results .radical-actions-list a:hover {
+  color: #55229e;
+}
+
 @media(min-width: 768px){
   .dsroi-radical-actions .post-container {
     display: flex;

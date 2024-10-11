@@ -62,4 +62,34 @@ class DSROI_WP_UTIL extends DSROI_BASE{
     return $terms;
   }
 
+  public static function get_regions( $post_id ){
+    $regions = array();
+
+    foreach( self::get_the_post_terms( $post_id, 'region' ) as $region ){
+      if( $region->parent !== 0 ) array_push( $regions, $region->name );
+    }
+
+    return $regions;
+  }
+
+  public static function get_hierarchical_regions( $post_id ){
+    $regions = array();
+
+    foreach( self::get_the_post_terms( $post_id, 'region' ) as $region ){
+      if( $region->parent ){
+        // FETCH THE PARENT TERM OBJECT IF IT'S NOT FETCHED ALREADY
+        if( isset( $regions[$region->parent] ) ){
+          $regions[$region->parent] = "$region->name, {$regions[$region->parent]}";
+        } else {
+          $parent_term = get_term_by( 'term_id', $region->parent, 'region' );
+          $regions[$parent_term->term_id]  = "$region->name, $parent_term->name;";
+        }
+      } else {
+          $regions[$region->term_id] = $region->name.";";
+      }
+    }
+
+    return $regions;
+  }
+
 }
