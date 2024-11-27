@@ -7,6 +7,7 @@ get_header(); ?>
   <?php while ( have_posts() ) : the_post(); ?>
     <article <?php post_class( 'entry' ); ?>>
   		<header class="entry-header">
+        <div class="back-to-archive" style="margin-bottom:15px;"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> <a href="/radical-action-archive/">Return to Archive</a></div>
         <h1 class="entry-title"><?php the_title();?></h1>
         <?php echo do_shortcode('[dsroi_radical_actions_meta]');?>
   		</header>
