@@ -168,13 +168,6 @@ body.single .dsroi-post{
   color: #d03749;
 }
 
-.radical-action-post-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 50px;
-}
-
 .radical-action-post-nav .previous-post,
 .radical-action-post-nav .next-post {
   display: flex;
@@ -186,7 +179,9 @@ body.single .dsroi-post{
   justify-content: flex-end;
 }
 
-.radical-action-post-nav .fa {
+.radical-action-post-nav .post-navigation .nav-next i,
+.radical-action-post-nav .post-navigation .nav-previous i {
+  margin: 0;
   color: #8e8e8e;
   font-size: 25px;
 }
@@ -225,14 +220,6 @@ body.single .dsroi-post{
     padding-left: 30px;
   }
 
-  .radical-action-post-nav {
-    gap: 0;
-  }
-
-  .radical-action-post-nav .previous-post,
-  .radical-action-post-nav .next-post {
-    width: 50%;
-  }
 }
 
 @media(max-width:479px){
