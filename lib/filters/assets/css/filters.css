@@ -190,7 +190,7 @@
 }
 
 /* PAGINATION */
-.dsroi-search-filter .pagination .page-numbers {
+.dsroi-numbered-pagination .page-numbers {
   color: #4f4f4f;
   font-size: 14px;
   font-weight: 500;
@@ -198,13 +198,13 @@
   margin-right: 7px;
 }
 
-.dsroi-search-filter .pagination .page-numbers.current {
+.dsroi-numbered-pagination .page-numbers.current {
   color: #55299e;
   font-size: 18px;
   line-height: 27px;
 }
 
-.dsroi-search-filter .pagination .page-numbers:hover {
+.dsroi-numbered-pagination .page-numbers:hover {
   color: #55299e;
 }
 

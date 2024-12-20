@@ -55,18 +55,20 @@
           </li>
         <?php endwhile;?>
       </ul>
-      <?php
-        $GLOBALS['wp_query']->max_num_pages = $query->max_num_pages;
-        the_posts_pagination(
-          array(
-            'mid_size' 	=> 1,
-            'prev_text' => __( 'Prev' ),
-            'next_text' => __( 'Next' ),
-            'screen_reader_text' => __( ' ' ),
-          )
-        );
-        wp_reset_postdata();
-      ?>
+      <div class="dsroi-numbered-pagination">
+        <?php
+          $GLOBALS['wp_query']->max_num_pages = $query->max_num_pages;
+          the_posts_pagination(
+            array(
+              'mid_size' 	=> 1,
+              'prev_text' => __( 'Prev' ),
+              'next_text' => __( 'Next' ),
+              'screen_reader_text' => __( ' ' ),
+            )
+          );
+          wp_reset_postdata();
+        ?>
+      </div>
     <?php else: ?>
       <h6 class='text-center not-found-txt'>No posts found</h6>
     <?php endif; ?>
