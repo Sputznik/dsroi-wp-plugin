@@ -9,7 +9,9 @@ class DSROI_WP_PLUGIN extends DSROI_BASE{
 
    add_action( 'pre_get_posts', array( $this, 'modifyArchiveQuery' ) );
 
-   add_filter( 'single_template', array($this, 'getSinglePostTemplate') );
+   add_filter( 'single_template', array($this, 'getSinglePostTemplate') );  // LOAD CUSTOM SINGLE POST TEMPLATE
+
+   add_action( 'pre_get_posts', array( $this, 'postTagFilter' ) ); // ADD CPT IN TAG TEMPLATE
 
   }
 
@@ -48,6 +50,12 @@ class DSROI_WP_PLUGIN extends DSROI_BASE{
     }
 
     return $single_template;
+  }
+
+  function postTagFilter( $query ){
+    if( $query->is_main_query() && ! is_admin() && $query->is_tag ){
+      $query->set('post_type', array( 'radical-actions' ) );
+    }
   }
 
 }
