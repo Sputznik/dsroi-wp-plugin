@@ -1,9 +1,12 @@
 <?php
   $main_tax_query = array();
+  $search_query   = isset( $_GET[ 'phrase' ] ) && !empty( $_GET[ 'phrase' ] ) ? $_GET[ 'phrase' ] : '';
+  $results_text   = $this->getResultsText( $_GET );
   $paged = (  get_query_var('paged')  ) ? get_query_var('paged') : 1;
   $args = array(
     'paged'       => $paged,
     'post_status' =>'publish',
+    's'           => $search_query,
     'post_type'   => 'radical-actions'
   );
 
@@ -39,11 +42,15 @@
 ?>
 <div class="dsroi-search-filter">
   <div class="dsroi-search-form">
+    <?php echo $this->getSearchInputForm(); ?>
     <?php echo $this->getFilterForm(); ?>
   </div>
   <div class="dsroi-search-results">
     <?php if( $query->have_posts() ) : ?>
       <h3 class="search-results-heading">Radical Actions</h3>
+      <?php if( !empty( $results_text ) ): ?>
+        <h3><?php _e( $results_text ); ?></h3>
+      <?php endif; ?>
       <ul class="radical-actions-list">
         <?php while( $query->have_posts() ) : $query->the_post(); ?>
           <li class='dsroi-article-db'>

@@ -147,6 +147,16 @@
   text-transform: capitalize;
 }
 
+/* SEARCH BY KEYWORDS */
+.dsroi-search-form .search-by-keywords {
+  display: flex;
+}
+
+.dsroi-search-form button.search-by-keywords-submit {
+  border-radius: 0;
+  padding: 4px 8px;
+}
+
 /* SEARCH RESULTS */
 .dsroi-search-results .search-results-heading {
   margin: 0;
@@ -183,6 +193,7 @@
   margin-top: 0;
   margin-bottom: 5px;
   font-weight: 700;
+  word-break: break-word;
 }
 
 .dsroi-search-results .radical-actions-list a:hover {

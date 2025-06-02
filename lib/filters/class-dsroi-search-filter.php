@@ -121,11 +121,35 @@ class DSROI_SEARCH_FILTER {
     return ob_get_clean();
 	}
 
+	function getSearchInputForm(){
+		ob_start();
+    include( 'templates/search-by-keywords.php' );
+    return ob_get_clean();
+	}
+
 	/* SHORTCODE CALLBACK */
 	function filterForm( $atts ){
 		ob_start();
 		include( 'templates/search-results.php' );
     return ob_get_clean();
+	}
+
+	function getResultsText( $params ){
+		if( !empty( $params ) ){
+			$has_search_query = isset( $params[ 'phrase' ] ) ? true : false;
+
+			if( !$has_search_query ){
+				return "Showing results for the selected filters";
+			}
+
+			$search_query = !empty( $params[ 'phrase' ] ) ? $params[ 'phrase' ] : '';
+
+			if( !empty( $search_query ) ){
+				return "Showing results for: '$search_query'";
+			}
+
+		}
+
 	}
 
 }
