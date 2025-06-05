@@ -15,6 +15,8 @@ class DSROI_WP_PLUGIN extends DSROI_BASE{
 
    add_filter( 'tag_template', array( $this, 'getPostTagTemplate' ) ); // LOAD CUSTOM TAG TEMPLATE
 
+   add_action( 'wp_head', array( $this, 'radicalActionsHead' ) );
+
   }
 
   function assets(){
@@ -64,6 +66,12 @@ class DSROI_WP_PLUGIN extends DSROI_BASE{
     $file = DSROI_PATH.'partials/archive/post-tag.php';
     if( file_exists( $file ) ){ $tag_template = $file; }
     return $tag_template;
+  }
+
+  function radicalActionsHead(){
+    if( is_singular( 'radical-actions' ) ){
+      echo "<meta name='robots' content='noindex,nofollow' />";
+    }
   }
 
 }
